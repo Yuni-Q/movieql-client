@@ -12,4 +12,21 @@ export const HOME_PAGE = gql`
   }
 `;
 
-exprot const MOVIE_DETAILS = gql``
+export const MOVIE_DETAILS = gql`
+  query movie($movieId: Int!) {
+    movie(id: $movieId) {
+      medium_cover_image
+      title
+      rating
+      description_intro
+      language
+      genres
+    }
+    suggestions(id: $movieId) {
+      id
+      title
+      rating
+      medium_cover_image
+    }
+  }
+`;
